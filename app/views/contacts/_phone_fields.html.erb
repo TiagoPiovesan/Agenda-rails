@@ -1,0 +1,12 @@
+<div class="nested-fields">
+	<div class="field">
+    <div class="form-group">
+      <%= f.label :phone, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.text_field :phone, :class => 'form-control' %>
+      </div>
+      <%=f.error_span(:phone) %>
+    </div>
+        <%= link_to_remove_association('<span class="glyphicon glyphicon-remove red" style="color: #ec1010; float: right; margin-top: -40px"></span>'.html_safe, f) %>
+  </div>
+</div>

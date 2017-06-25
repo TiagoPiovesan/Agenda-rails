@@ -1,0 +1,25 @@
+<%- model_class = Contact -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+  <dd><%= @contact.nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @contact.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kind_id) %>:</strong></dt>
+  <dd><%= @contact.kind_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rmk) %>:</strong></dt>
+  <dd><%= @contact.rmk %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              contacts_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_contact_path(@contact), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              contact_path(@contact),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

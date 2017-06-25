@@ -1,0 +1,13 @@
+"es":
+  activerecord:
+    models:
+      contact: Contacto
+    attributes:
+      contact:
+        nome: "Nombre de contacto"
+        email: "Email"
+        kind: "Tipo de Contacto"
+        #kind_id para o formulário
+        kind_id: "Tipo de Contacto"
+        
+      # will translate User attribute "login" as "Handle"
