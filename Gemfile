@@ -12,6 +12,8 @@ gem 'rails', '~> 5.0.3'
 gem 'sqlite3'
 # Use Puma as the app server
 gem "cocoon"
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem 'faker'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

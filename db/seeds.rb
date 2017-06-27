@@ -9,7 +9,7 @@ puts "Gerando os tipos de contatos"
 Kind.create([{description: "Amigo"}, {description: "Coral"}, {description: "Comercial"}])
 
 puts "Populando Dados"
-10.times do |i|
+100.times do |i|
 	Contact.create(nome: Faker::Name.name,
 	               email: Faker::Internet.email,
 	               kind: Kind.all.sample)

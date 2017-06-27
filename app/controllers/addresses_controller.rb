@@ -4,7 +4,7 @@ class AddressesController < ApplicationController
   # GET /addresses
   # GET /addresses.json
   def index
-    @addresses = Address.all
+    retorna_endereco
   end
 
   # GET /addresses/1
@@ -14,7 +14,7 @@ class AddressesController < ApplicationController
 
   # GET /addresses/new
   def new
-    @address = Address.new
+    retorna_endereco
     retorna_contato
   end
 
@@ -64,6 +64,10 @@ class AddressesController < ApplicationController
   end
 
   private
+    def retorna_endereco
+      @addresses = Address.all
+    end
+
     def retorna_contato
       @contatos = Contact.all
     end
