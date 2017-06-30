@@ -1,40 +1,36 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_action :set_retorna_tipos, only: [:new, :edit, :update, :create, :index]
 
   # GET /contacts
   # GET /contacts.json
   def index
     @contacts = Contact.all.page(params[:page]).per(15)
-    retorna_tipos
   end
 
   # GET /contacts/1
   # GET /contacts/1.json
   def show
-    retorna_tipos
   end
 
   # GET /contacts/new
   def new
     @contact = Contact.new
     @contact.build_address
-    retorna_tipos
   end
 
   # GET /contacts/1/edit
   def edit
-    retorna_tipos
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
     @contact = Contact.new(contact_params)
-    retorna_tipos
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to contacts_path, notice: I18n.t('mensagem.create') }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
@@ -48,7 +44,7 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+        format.html { redirect_to contacts_path, notice: I18n.t('mensagem.update') }
         format.json { render :show, status: :ok, location: @contact }
       else
         format.html { render :edit }
@@ -62,13 +58,13 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+      format.html { redirect_to contacts_path, notice: I18n.t('mensagem.destroy') }
       format.json { head :no_content }
     end
   end
 
   private
-  def retorna_tipos
+  def set_retorna_tipos
     @kinds = Kind.all
   end
     # Use callbacks to share common setup or constraints between actions.

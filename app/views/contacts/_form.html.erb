@@ -1,4 +1,3 @@
-<div class="text-center">
   <%= form_for @contact, :html => { :class => "form-horizontal contact" } do |f| %>
 
     <% if @contact.errors.any? %>
@@ -19,7 +18,7 @@
     <div class="form-group">
       <%= f.label :nome, :class => 'control-label col-lg-2' %>
       <div class="col-xs-6">
-        <%= f.text_field :nome, :class => 'form-control' %>
+        <%= f.text_field :nome, :class => 'form-control', placeholder: "Nome" %>
       </div>
       <%=f.error_span(:nome) %>
     </div>
@@ -29,12 +28,13 @@
       <div class="col-xs-6">
         <%= collection_select(:contact, :kind_id, @kinds, :id, :description, {prompt: true}, {class: 'form-control'}) %>
       </div>
+     <%=f.error_span(:kind) %>
     </div>
 
     <div class="form-group">
       <%= f.label :email, :class => 'control-label col-lg-2' %>
       <div class="col-xs-6">
-        <%= f.text_field :email, :class => 'form-control' %>
+        <%= f.text_field :email, :class => 'form-control', placeholder: "E-mail" %>
       </div>
       <%=f.error_span(:email) %>
     </div>
@@ -43,14 +43,14 @@
       <div class="form-group">
         <%= address_fields.label :stret, :class => 'control-label col-lg-2' %>
         <div class="col-xs-6">
-          <%= address_fields.text_field :stret, :class => 'form-control' %>
+          <%= address_fields.text_field :stret, :class => 'form-control', placeholder: "Rua" %>
         </div>
         <%= address_fields.error_span(:stret) %>
       </div>
       <div class="form-group">
         <%= address_fields.label :number, :class => 'control-label col-lg-2' %>
         <div class="col-xs-6">
-          <%= address_fields.number_field :number, :class => 'form-control' %>
+          <%= address_fields.number_field :number, :class => 'form-control', placeholder: "Numero" %>
         </div>
         <%= address_fields.error_span(:number) %>
       </div>
@@ -74,7 +74,7 @@
     <div class="form-group">
       <%= f.label :rmk, :class => 'control-label col-lg-2' %>
       <div class="col-xs-6">
-        <%= f.text_area :rmk, :class => 'form-control' %>
+        <%= f.text_area :rmk, :class => 'form-control', placeholder: "Observação" %>
       </div>
       <%=f.error_span(:rmk) %>
     </div>
@@ -88,4 +88,3 @@
     </div>
 
   <% end %>
-</div>

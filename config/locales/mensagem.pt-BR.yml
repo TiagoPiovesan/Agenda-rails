@@ -2,3 +2,6 @@
   mensagem:
     mensagem-confirm: "Você tem certeza disso?"
     listing: "Listando"
+    create: "Contato cadastrado com sucesso!"
+    update: "Contato alterado com sucesso!"
+    destroy: "O contato foi apagado"
