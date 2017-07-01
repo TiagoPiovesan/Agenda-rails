@@ -23,6 +23,8 @@
         city: Cidade
       phone:
         phone: Telefone
+      kind:
+        description: "Descrição"
 
 
 
