@@ -11,7 +11,7 @@ class Contact < ApplicationRecord
  	#no plural
  	has_many :phones
 
- 	#permite que o endereço possa ser adicionado pelo contato, no mesmo lugar
+ 	#permite que o endereço possa ser adicionado pelo contato, no mesmo lugar 'formulario complexo'
  	accepts_nested_attributes_for :address
 	accepts_nested_attributes_for :phones, reject_if: :all_blank, allow_destroy: true
 end
