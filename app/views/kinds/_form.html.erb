@@ -17,7 +17,7 @@
 
   <div class="form-group">
     <%= f.label :description, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+    <div class="col-lg-5">
       <%= f.text_field :description, :class => 'form-control' %>
     </div>
     <%=f.error_span(:description) %>
@@ -25,7 +25,7 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%=  f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 kinds_path, :class => 'btn btn-default' %>
     </div>

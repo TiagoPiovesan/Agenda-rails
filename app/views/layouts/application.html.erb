@@ -30,6 +30,7 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "alert" %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -37,9 +38,6 @@
     <![endif]-->
   </head>
   <body>
-    <script>
-      $.notify("Hello World");
-    </script>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -47,10 +45,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href='<%= contacts_path %>'>Contatos</a>
+        <a class="navbar-brand" href='<%= root_url %>'>Home</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Criar Contato", new_contact_path  %></li>
+            <li><%= link_to "Criar Tipo", new_kind_path  %></li>
           </ul>
         </div>
       </div>
@@ -63,11 +62,7 @@
           <%= yield %>
         </div>
       </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2017</p>
-      </footer>
-
+      
     </div> <!-- /container -->
 
   </body>
