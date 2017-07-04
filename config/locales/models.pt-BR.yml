@@ -17,6 +17,8 @@
         kind: Tipo do Contato
         #kind_id para o formulário
         kind_id: Tipo de Contato
+        created_at: 'Criado em:'
+
       address:
         stret: Rua
         number: Numero
@@ -24,7 +26,8 @@
       phone:
         phone: Telefone
       kind:
-        description: "Descrição"
+        description: Descrição
+        created_at: 'Criado em:'
 
 
 

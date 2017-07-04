@@ -4,14 +4,67 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
-  <dd><%= @contact.nome %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @contact.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:kind_id) %>:</strong></dt>
-  <dd><%= @contact.kind_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rmk) %>:</strong></dt>
-  <dd><%= @contact.rmk %></dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:nome) %>:</strong>
+  </dt>
+  <dd>
+    <%= @contact.nome %>
+  </dd>
+
+  <dt>
+    <strong><%= model_class.human_attribute_name(:email) %>:</strong>
+  </dt>  
+  <dd>
+    <%= @contact.email %>
+  </dd>
+  
+  <dt>
+    <strong><%= model_class.human_attribute_name(:kind_id) %>:</strong>
+  </dt>
+  <dd>
+    <%= @contact.kind_id %>
+  </dd>
+
+  <dt>
+    <strong><%= model_class.human_attribute_name(:rmk) %>:</strong>
+  </dt>
+  <dd>
+    <%= @contact.rmk %>
+  </dd>
+
+<hr>
+
+  <dt>
+    <strong><%= model_class.human_attribute_name(:stret) %>:</strong>
+  </dt>
+  <dd>
+    <%= @contact.address.stret %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:number) %>:</strong>
+  </dt>
+  <dd>
+    <%= @contact.address.number %>
+  </dd>
+  <dt>
+    <strong><%= model_class.human_attribute_name(:city) %>:</strong>
+  </dt>
+  <dd>
+    <%= @contact.address.city %>
+  </dd>
+
+<hr>
+
+  <dt>
+    <strong><%= model_class.human_attribute_name(:phone) %>:</strong>
+  </dt>
+  <dd>
+  <% @contact.phones.each do |phones| %>
+    <dd>
+      <%=  "- #{phones.phone}" %>
+    </dd>
+  <% end %>
+  </dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

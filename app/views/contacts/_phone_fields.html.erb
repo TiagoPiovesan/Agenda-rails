@@ -1,9 +1,9 @@
 <div class="nested-fields">
 	<div class="field">
     <div class="form-group">
-      <%= f.label :phone, :class => 'control-label col-lg-2' %>
-      <div class="col-lg-6">
-        <%= f.text_field :phone, :class => 'form-control' %>
+      <%= f.label :phone, :class => 'control-label col-xs-2' %>
+      <div class="col-lg-10">
+        <%= f.telephone_field :phone, :class => 'form-control', placeholder: "Exemplo: (35) 9 9132-2352"  %>
       </div>
       <%=f.error_span(:phone) %>
     </div>

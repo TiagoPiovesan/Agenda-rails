@@ -9,8 +9,6 @@
       <th><%= model_class.human_attribute_name(:nome) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:kind_id) %></th>
-      <th><%= model_class.human_attribute_name(:rmk) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -21,8 +19,6 @@
         <td><%= contact.nome %></td>
         <td><%= contact.email %></td>
         <td><%= contact.kind.description %></td>
-        <td><%= contact.rmk %></td>
-        <td><%=l contact.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),contact_path(contact), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

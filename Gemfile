@@ -20,6 +20,7 @@ gem "cocoon"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'faker'
+gem 'lerolero_generator', '~> 1.0', '>= 1.0.1'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
