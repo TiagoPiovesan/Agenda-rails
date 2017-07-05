@@ -67,7 +67,7 @@ class ContactsController < ApplicationController
     @contact_a_buscar = params[:nome]
 
 
-    @contacts = Contact.where("nome like ?", "%#{@contact_a_buscar}%").page(params[:page]).per(15)
+    @contacts = Contact.where("nome ILIKE ?", "%#{@contact_a_buscar}%").page(params[:page]).per(15)
   end
 
   private
