@@ -1,5 +1,6 @@
 class InicialController < ApplicationController
   def index
-    @real = 3.55
+    @contacts = Contact.order('created_at desc').limit(5)
+    @kinds = Kind.order('created_at desc').limit(5)
   end
 end

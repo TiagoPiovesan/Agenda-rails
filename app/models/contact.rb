@@ -1,6 +1,6 @@
 class Contact < ApplicationRecord
 	#validações
-	validates :nome, presence: true
+	validates :nome, presence: true, uniqueness: true
 	validates :email, presence: true
 	validates :kind, presence: true
 

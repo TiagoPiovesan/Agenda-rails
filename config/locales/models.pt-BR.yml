@@ -10,8 +10,12 @@
       phone:
         one: Telefone
         other: Telefones
+      kind:
+        one: Tipo
+        other: Tipos
     attributes:
       contact:
+        id: Código
         nome: Nome
         email: E-mail
         kind: Tipo do Contato
@@ -26,6 +30,7 @@
       phone:
         phone: Telefone
       kind:
+        id: Código
         description: Descrição
         created_at: 'Criado em:'
 

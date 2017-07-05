@@ -1,0 +1,33 @@
+<%- model_class = Contact -%>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:kind_id) %></th>
+      <th><%=t 'titulos.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to contact.id, contact_path(contact) %></td>
+        <td><%= contact.nome %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.kind.description %></td>
+        <td>
+          <%= link_to t('buttons.show', :default => t("helpers.links.show")),contact_path(contact), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('buttons.edit', :default => t("helpers.links.edit")),
+                      edit_contact_path(contact), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('buttons.destroy', :default => t("helpers.links.destroy")),
+                      contact_path(contact),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

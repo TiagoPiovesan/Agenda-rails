@@ -67,12 +67,12 @@
   </dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
+<%= link_to t('buttons.back', :default => t("helpers.links.back")),
               contacts_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
+<%= link_to t('buttons.edit', :default => t("helpers.links.edit")),
               edit_contact_path(@contact), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+<%= link_to t('buttons.destroy', :default => t("helpers.links.destroy")),
               contact_path(@contact),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem certeza?')) },
               :class => 'btn btn-danger' %>

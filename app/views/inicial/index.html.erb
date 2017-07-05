@@ -1,19 +1,30 @@
 <h1><%= t ('mensagem.welcome') %></h1>
 
-<div class="button-inicial">
-    <a href='<%= contacts_path %>'>
-        <h1>
-            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-            Ver todos os contatos
-        </h1> 
-    </a>
+<ul class="nav nav-pills nav-stacked">
+    <li role="presentation"><a href='<%= contacts_path %>'>
+        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+        Lista de contatos
+    </a></li>    
+    <li role="presentation"><a href='<%= kinds_path %>'>
+    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+        Lista de tipos
+     </a></li>    
+</ul>
+
+<hr>
+
+<div class="col-xs-12">
+    <div class="page-header">
+      <h3>Ultimos cadatros</h3>
+    </div>
+    <%= render :partial => 'contacts/table' %>
 </div>
 
-<div class="button-inicial kinds">
-    <a href='<%= kinds_path %>'>
-        <h1>
-            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-            Ver todos os Tipos
-        </h1> 
-    </a>
+<hr>
+
+<div class="col-xs-12">
+    <div class="page-header">
+      <h3>Ultimos cadatros de Tipo</h3>
+    </div>
+    <%= render :partial => 'kinds/table' %>
 </div>
