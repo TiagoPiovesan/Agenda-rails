@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'inicial#index'
   get 'inicial/index'
+  get 'contacts/busca' => 'contacts#busca', as: :busca_contact
 
   resources :kinds
   resources :contacts

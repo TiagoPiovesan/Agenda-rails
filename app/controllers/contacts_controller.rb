@@ -63,6 +63,13 @@ class ContactsController < ApplicationController
     end
   end
 
+  def busca
+    @contact_a_buscar = params[:nome]
+
+
+    @contacts = Contact.where("nome like ?", "%#{@contact_a_buscar}%").page(params[:page]).per(15)
+  end
+
   private
   def set_retorna_tipos
     @kinds = Kind.all

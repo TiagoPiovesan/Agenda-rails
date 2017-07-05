@@ -1,5 +1,12 @@
 <%- model_class = Contact -%>
 
+<%= form_tag busca_contact_path, method: :get, class: "navbar-form navbar-right" do %>
+  <div class="form-group">
+      <%= text_field_tag :nome, @contact_a_buscar, class: "form-control" %>
+      <%= button_to "Buscar", nil, class: "btn btn-default" %>
+    </div>
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -31,3 +38,12 @@
     <% end %>
   </tbody>
 </table>
+
+<%= link_to t('buttons.new', :default => t("helpers.links.new")),
+            new_contact_path,
+            :class => 'btn btn-primary' %>
+
+<!-- paginação -->
+<nav class="text-center">
+  <%= paginate @contacts, :theme => 'twitter-bootstrap-3' %>
+</nav>
